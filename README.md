@@ -19,7 +19,6 @@ Through this project, I learned and practiced:
 - File descriptors
 - Function pointers
 - Linked lists
-- Defensive programming and memory management
 
 The library is divided into three main parts.
 
@@ -150,5 +149,3 @@ It was mainly used to:
 - Provide hints and guidance when I was stuck, without directly giving me the solution.
 - Help identify bugs and understand compiler errors.
 - Suggest test cases and explain expected behavior.
-
-The implementation and final code were written and tested by me.
