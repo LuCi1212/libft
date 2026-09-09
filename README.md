@@ -108,7 +108,7 @@ int main(void)
     free(str);
     return (0);
 }
-
+```
 ## Compilation
 
 The library is compiled into a static library named `libft.a`.
