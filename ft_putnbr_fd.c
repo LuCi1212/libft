@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: winhein <winhein@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 13:41:18 by winhein           #+#    #+#             */
-/*   Updated: 2026/09/09 13:46:12 by winhein          ###   ########.fr       */
+/*   Created: 2026/09/09 11:34:25 by winhein           #+#    #+#             */
+/*   Updated: 2026/09/09 11:36:11 by winhein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	i = 0;
-	while (i < s)
+	char	c;
+
+	if (n == -2147483648)
 	{
-		((unsigned char *) dest)[i] = ((const unsigned char *) src)[i];
-		i++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (dest);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	c = '0' + (n % 10);
+	write(fd, &c, 1);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char	dest[20] = "helloWin";
-
-	ft_memcpy(dest, dest + 1 , 5);
-
-	printf("%s\n", dest);
-	return (0);
-}
-*/

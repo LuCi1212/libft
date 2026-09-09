@@ -1,32 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luci <luci@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/26 16:16:37 by luci              #+#    #+#             */
-/*   Updated: 2026/08/27 15:55:14 by luci             ###   ########.fr       */
+/*   Created: 2026/09/07 21:08:21 by luci              #+#    #+#             */
+/*   Updated: 2026/09/07 21:19:04 by luci             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*first;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	first = malloc(sizeof(t_list));
+	if (first == NULL)
+		return (NULL);
+	first->content = content;
+	first->next = NULL;
+	return (first);
 }
 /*
 #include <stdio.h>
-int	main (void)
+
+int	main(void)
 {
-	printf("1.lenght is -> %d\n", ft_strlen("daje"));
-	printf("2.lenght is -> %d\n", ft_strlen("roma."));
-	printf("3.lenght is -> %d\n", ft_strlen("sambucone"));
+	t_list	*node;
+
+	node = ft_lstnew("Hello 42");
+	if (node == NULL)
+	{
+		printf("Memory allocation failed\n");
+		return (1);
+	}
+
+	printf("Content: %s\n", (char *)node->content);
+
+	if (node->next == NULL)
+		printf("Next: NULL\n");
+
+	free(node);
+	return (0);
 }
 */

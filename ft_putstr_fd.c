@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luci <luci@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/26 16:16:37 by luci              #+#    #+#             */
-/*   Updated: 2026/08/27 15:55:14 by luci             ###   ########.fr       */
+/*   Created: 2026/09/06 21:27:59 by luci              #+#    #+#             */
+/*   Updated: 2026/09/06 21:31:16 by luci             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
+	if (s == NULL)
+		return ;
 	i = 0;
-	while (str[i])
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
 		i++;
-	return (i);
+	}
 }
-/*
-#include <stdio.h>
-int	main (void)
-{
-	printf("1.lenght is -> %d\n", ft_strlen("daje"));
-	printf("2.lenght is -> %d\n", ft_strlen("roma."));
-	printf("3.lenght is -> %d\n", ft_strlen("sambucone"));
-}
-*/

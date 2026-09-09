@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luci <luci@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: winhein <winhein@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 21:21:22 by luci              #+#    #+#             */
-/*   Updated: 2026/08/27 15:55:29 by luci             ###   ########.fr       */
+/*   Updated: 2026/09/09 13:46:48 by winhein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	if (dest < src)
 	{
 		i = 0;

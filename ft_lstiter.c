@@ -1,43 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: winhein <winhein@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 13:41:18 by winhein           #+#    #+#             */
-/*   Updated: 2026/09/09 13:46:12 by winhein          ###   ########.fr       */
+/*   Created: 2026/09/09 11:32:38 by winhein           #+#    #+#             */
+/*   Updated: 2026/09/09 11:32:54 by winhein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t s)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	i;
-	
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	i = 0;
-	while (i < s)
+	while (lst)
 	{
-		((unsigned char *) dest)[i] = ((const unsigned char *) src)[i];
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (dest);
 }
 
 /*
 #include <stdio.h>
-#include <string.h>
+
+void	print_content(void *content)
+{
+	printf("%s\n", (char *)content);
+}
 
 int	main(void)
 {
-	char	dest[20] = "helloWin";
+	t_list	*list;
+	t_list	*node2;
+	t_list	*node3;
 
-	ft_memcpy(dest, dest + 1 , 5);
+	list = ft_lstnew("Hello");
+	node2 = ft_lstnew("World");
+	node3 = ft_lstnew("42");
 
-	printf("%s\n", dest);
+	list->next = node2;
+	node2->next = node3;
+
+	printf("List contents:\n");
+	ft_lstiter(list, print_content);
+
 	return (0);
 }
 */

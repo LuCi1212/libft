@@ -19,11 +19,11 @@ char	*ft_strchr(const char *src, int c)
 	i = 0;
 	while (src[i])
 	{
-		if (src[i] == c)
+		if (src[i] == (char)c)
 			return ((char *)&src[i]);
 		i++;
 	}
-	if (src[i] == c)
+	if (src[i] == (char)c)
 		return ((char *)&src[i]);
 	return (0);
 }

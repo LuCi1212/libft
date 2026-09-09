@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luci <luci@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/26 16:16:37 by luci              #+#    #+#             */
-/*   Updated: 2026/08/27 15:55:14 by luci             ###   ########.fr       */
+/*   Created: 2026/08/28 19:02:24 by luci              #+#    #+#             */
+/*   Updated: 2026/08/29 00:07:44 by luci             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strdup(const char *s)
 {
 	size_t	i;
+	size_t	len;
+	char	*tmp;
 
+	len = ft_strlen(s);
+	tmp = malloc(sizeof(char) * (len + 1));
+	if (tmp == NULL)
+		return (NULL);
 	i = 0;
-	while (str[i])
+	while (i < len)
+	{
+		tmp[i] = s[i];
 		i++;
-	return (i);
+	}
+	tmp[i] = '\0';
+	return (tmp);
 }
-/*
-#include <stdio.h>
-int	main (void)
-{
-	printf("1.lenght is -> %d\n", ft_strlen("daje"));
-	printf("2.lenght is -> %d\n", ft_strlen("roma."));
-	printf("3.lenght is -> %d\n", ft_strlen("sambucone"));
-}
-*/

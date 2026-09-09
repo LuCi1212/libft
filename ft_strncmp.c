@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luci <luci@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: winhein <winhein@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/26 16:16:37 by luci              #+#    #+#             */
-/*   Updated: 2026/08/27 15:55:14 by luci             ###   ########.fr       */
+/*   Created: 2026/09/09 11:31:03 by winhein           #+#    #+#             */
+/*   Updated: 2026/09/09 11:31:13 by winhein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_strncmp(const char *str1, const char *str2, size_t	size)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	if (size == 0)
+		return (0);
+	while ((str1[i] || str2[i]) && i < size)
+	{
+		if (str1[i] != str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		else
+			i++;
+	}
+	return (0);
 }
-/*
-#include <stdio.h>
-int	main (void)
-{
-	printf("1.lenght is -> %d\n", ft_strlen("daje"));
-	printf("2.lenght is -> %d\n", ft_strlen("roma."));
-	printf("3.lenght is -> %d\n", ft_strlen("sambucone"));
-}
-*/

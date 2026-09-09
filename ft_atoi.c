@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: winhein <winhein@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 13:41:18 by winhein           #+#    #+#             */
-/*   Updated: 2026/09/09 13:46:12 by winhein          ###   ########.fr       */
+/*   Created: 2026/09/09 11:33:21 by winhein           #+#    #+#             */
+/*   Updated: 2026/09/09 11:33:48 by winhein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t s)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
-	
-	if (dest == NULL && src == NULL)
-		return (NULL);
+	int	i;
+	int	sign;
+	int	n;
+
 	i = 0;
-	while (i < s)
+	sign = 1;
+	n = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		((unsigned char *) dest)[i] = ((const unsigned char *) src)[i];
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	return (dest);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		n = (str[i] - '0') + (n * 10);
+		i++;
+	}
+	return (n * sign);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char	dest[20] = "helloWin";
-
-	ft_memcpy(dest, dest + 1 , 5);
-
-	printf("%s\n", dest);
-	return (0);
-}
-*/

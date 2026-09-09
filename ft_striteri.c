@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luci <luci@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: winhein <winhein@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/26 16:16:37 by luci              #+#    #+#             */
-/*   Updated: 2026/08/27 15:55:14 by luci             ###   ########.fr       */
+/*   Created: 2026/09/09 11:37:29 by winhein           #+#    #+#             */
+/*   Updated: 2026/09/09 11:40:35 by winhein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i])
+	if (s == NULL || f == NULL)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
 		i++;
-	return (i);
+	}
 }
-/*
-#include <stdio.h>
-int	main (void)
-{
-	printf("1.lenght is -> %d\n", ft_strlen("daje"));
-	printf("2.lenght is -> %d\n", ft_strlen("roma."));
-	printf("3.lenght is -> %d\n", ft_strlen("sambucone"));
-}
-*/
