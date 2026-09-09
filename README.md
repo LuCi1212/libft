@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by <winhein>.*
+*This project has been created as part of the 42 curriculum by winhein.*
 
 # Libft
 
@@ -21,7 +21,7 @@ Through this project, I learned and practiced:
 - Linked lists
 - Defensive programming and memory management
 
-The library is divided into two main parts.
+The library is divided into three main parts.
 
 ### Part 1 - Libc Functions
 
@@ -108,3 +108,47 @@ int main(void)
     free(str);
     return (0);
 }
+
+## Compilation
+
+The library is compiled into a static library named `libft.a`.
+
+Run:
+
+    make
+
+To remove object files:
+
+    make clean
+
+To remove object files and the library:
+
+    make fclean
+
+To recompile everything:
+
+    make re
+
+
+## Resources
+
+### References
+
+- C standard library documentation
+- `man` pages for C functions
+- 42 Libft project subject
+- w3schools
+- mycodeschool(Youtube) for memory allocation and pointers
+
+### AI Usage
+
+AI was used as a learning and debugging assistant during the project.
+
+It was mainly used to:
+- Clarify C programming concepts such as pointers, memory allocation,function pointers, and linked lists.
+- Explain how certain Libft functions should work.
+- Provide hints and guidance when I was stuck, without directly giving me the solution.
+- Help identify bugs and understand compiler errors.
+- Suggest test cases and explain expected behavior.
+
+The implementation and final code were written and tested by me.
