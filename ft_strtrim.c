@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luci <luci@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: winhein <winhein@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/29 01:27:47 by luci              #+#    #+#             */
-/*   Updated: 2026/09/05 20:20:17 by luci             ###   ########.fr       */
+/*   Created: 2026/09/09 20:35:56 by winhein           #+#    #+#             */
+/*   Updated: 2026/09/09 20:36:06 by winhein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check(const char c, const char *str)
+static int	check(const char c, const char *str)
 {
 	int	i;
 

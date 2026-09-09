@@ -6,7 +6,7 @@
 /*   By: winhein <winhein@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 13:41:18 by winhein           #+#    #+#             */
-/*   Updated: 2026/09/09 13:46:12 by winhein          ###   ########.fr       */
+/*   Updated: 2026/09/09 20:38:03 by winhein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memcpy(void *dest, const void *src, size_t s)
 {
 	size_t	i;
-	
+
 	if (dest == NULL && src == NULL)
 		return (NULL);
 	i = 0;
